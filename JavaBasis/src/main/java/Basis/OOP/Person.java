@@ -1,7 +1,7 @@
 package Basis.OOP;
 
 /**
- * 封装性
+ * encapsulation
  */
 public class Person {
     private String name;
