@@ -13,7 +13,7 @@ public class ExceptionTest {
         for (int i = 0; i < testTimes; i++) {
             new Object();
         }
-        System.out.println("建立对象：" + (System.nanoTime() - l));
+        System.out.println("create Objects：" + (System.nanoTime() - l));
     }
 
     public void newException() {
@@ -21,7 +21,7 @@ public class ExceptionTest {
         for (int i = 0; i < testTimes; i++) {
             new Exception();
         }
-        System.out.println("建立异常对象：" + (System.nanoTime() - l));
+        System.out.println("create Exceptions：" + (System.nanoTime() - l));
     }
 
     public void catchException() {
@@ -32,7 +32,7 @@ public class ExceptionTest {
             } catch (Exception e) {
             }
         }
-        System.out.println("建立、抛出并接住异常对象：" + (System.nanoTime() - l));
+        System.out.println("create,throw and catch Exceptions：" + (System.nanoTime() - l));
     }
 
     public static void main(String[] args) {
