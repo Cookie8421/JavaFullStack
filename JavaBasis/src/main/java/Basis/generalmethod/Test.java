@@ -1,4 +1,4 @@
-package Basis.GeneralMethod;
+package Basis.generalmethod;
 
 import java.util.HashSet;
 

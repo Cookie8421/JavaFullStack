@@ -1,4 +1,4 @@
-package Basis.OOP;
+package Basis.oop;
 
 /**
  * encapsulation

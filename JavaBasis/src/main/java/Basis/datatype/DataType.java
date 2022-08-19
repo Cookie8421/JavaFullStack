@@ -1,6 +1,4 @@
-package Basis.DataType;
-
-import java.nio.charset.StandardCharsets;
+package Basis.datatype;
 
 public class DataType {
     public static void main(String[] args) {
