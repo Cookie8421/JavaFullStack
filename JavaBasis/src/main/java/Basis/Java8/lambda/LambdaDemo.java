@@ -36,6 +36,7 @@ public class LambdaDemo {
         List <String> str1 = list.stream().collect(Collectors.toList());
         List <String> str2 = list.stream().parallel().collect(Collectors.toList());
 
+
         //parallelStream原理:
         /*List originalList = new ArrayList();
         List split1 = originalList(0, originalList.size()/2);//将数据分小部分
@@ -171,6 +172,22 @@ public class LambdaDemo {
         System.out.println("Lowest prime number in List : " + stats.getMin());
         System.out.println("Sum of all prime numbers : " + stats.getSum());
         System.out.println("Average of all prime numbers : " + stats.getAverage());
+
+
+        //peek 可以使用peek方法，peek方法可只包含一个空的方法体，只要能设置断点即可，但有些IDE不允许空，可以如下文示例，简单写一个打印逻辑。 注意，调试完后要删掉。 List<Person> lists = new ArrayList<Person>();
+        //lists.add(new Person(1L, "p1"));
+        //lists.add(new Person(2L, "p2"));
+        //lists.add(new Person(3L, "p3"));
+        //lists.add(new Person(4L, "p4"));
+        //System.out.println(lists);
+        //
+        //List<Person> list2 = lists.stream()
+        //				 .filter(f -> f.getName().startsWith("p"))
+        //                .peek(t -> {
+        //                    System.out.println(t.getName());
+        //                })
+        //                .collect(Collectors.toList());
+        //System.out.println(list2);
 
         //自定义函数接口
         //
@@ -386,6 +403,56 @@ public class LambdaDemo {
         //		System.out.println(System.currentTimeMillis()-current);
         //	}
         //}
+
+        //集合--》取元素的一个属性--》去重---》组装成List--》返回List<LikeDO> likeDOs=new ArrayList<LikeDO>();
+        //List<Long> likeTidList = likeDOs.stream().map(LikeDO::getTid)
+        //                .distinct().collect(Collectors.toList());
+
+        //集合--》按表达式过滤--》遍历、每个元系处理--》放入预先定义的集合中  Map<String, StkProduct> newStockName2Product = Maps.newConcurrentMap();
+        //        stockProducts.stream().filter(stkProduct -> stkProduct.enabled).forEach(stkProduct -> {
+        //            String newName = BCConvert.bj2qj(StringUtils.replace(stkProduct.name, " ", ""));
+        //            newStockName2Product.put(newName, stkProduct);
+        //        });
+        // Set<String> qjStockNames;
+        // qjStockNames.stream().filter(name -> !acAutomaton.getKey2link().containsKey(name)).forEach(name -> {
+        //            String value = "";
+        //            StkProduct stkProduct = stockNameQj2Product.get(name);
+        //            if (stkProduct != null) {
+        //                value = stkProduct.name;
+        //            }
+        //            acAutomaton.getKey2link().put(name, value);
+        //        });
+
+        //集合--》mapList<ImageModel> imageModelList = null;
+        //Map<Long, String> imagesMap = null;
+        //imagesMap = imageModelList.stream().collect(Collectors.toMap(ImageModel::getAid, o -> IMAGE_ADDRESS_PREFIX + o.getUrl()));
+        //
+        //
+        //
+        //Map<String, String> kvMap = postDetailCacheList.stream().collect(Collectors.toMap((detailCache) ->
+        //                getBbsSimplePostKey(detailCache.getTid()), JSON::toJSONString));
+        //
+        //
+        //Map<Long, Long> pidToTid；
+        //List<String> pidKeyList = pidToTid.entrySet().stream().map((o) -> getKeyBbsReplyPid(o.getValue(), o.getKey())).collect(Collectors.toList());
+
+
+        //DO模型---》Model模型
+        //List<AdDO> adDOList;
+        //adDOList.stream().map(adDo -> convertAdModel(adDo))
+        //                .collect(Collectors.toList());
+        //phones 是一个List<String>，将相同的元素分组、归类
+        //List<String> phones=new ArrayList<String>();
+        //        phones.add("a");
+        //        phones.add("b");
+        //        phones.add("a");
+        //        phones.add("a");
+        //        phones.add("c");
+        //        phones.add("b");
+        //        Map<String, List<String>> phoneClassify = phones.stream().collect(Collectors.groupingBy(item -> item));
+        //        System.out.println(phoneClassify);
+        //返回结果:
+        //{a=[a, a, a], b=[b, b], c=[c]}
 
 
     }
